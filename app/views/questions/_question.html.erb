@@ -1,0 +1,12 @@
+    <div id="<%= dom_id question %>" class="card bg-base-100 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">
+          <%= question.title %>
+          <div class="badge badge-accent"><%= question.status %></div>
+        </h2>
+        <p><%= question.body %></p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Answer!</button>
+        </div>
+      </div>
+    </div>

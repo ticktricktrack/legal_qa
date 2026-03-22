@@ -1,16 +1,18 @@
-<h1>Questions<h1>
-
-<% @questions.each do |question| %>
-  <div class="card bg-base-100 w-96 shadow-sm">
-    <div class="card-body">
-      <h2 class="card-title">
-        <%= question.title %>
-        <div class="badge badge-secondary"><%= question.status %></div>
-      </h2>
-      <p><%= question.body %></p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Answer!</button>
-      </div>
+<div class="container flex-col">
+  <div
+    tabindex="0"
+    class="bg-base-200 text-primary-content focus:text-secondary-content collapse"
+  >
+    <div class="collapse-title font-semibold">Submit a new question</div>
+    <div class="collapse-content text-sm">
+      <turbo-frame id="new_question">
+        <%= render "form", question: Question.new %>
+      </turbo-frame>
     </div>
   </div>
-<% end %>
+
+  <%= turbo_stream_from "questions" %>
+  <div id="questions-list">
+    <%= render @questions %>
+  </div>
+</div>
