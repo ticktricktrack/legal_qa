@@ -5,7 +5,7 @@ class Question < ApplicationRecord
 
   # Broadcasters
   after_create_commit -> { broadcast_prepend_to "questions", target: 'questions-list', partial: "shared/question"}
-  after_update_commit -> { broadcast_replace_to "todos" }
+  # after_update_commit -> { broadcast_replace_to "questions" }
 
   def open?
     status == 'open'

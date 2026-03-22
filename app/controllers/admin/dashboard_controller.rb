@@ -4,6 +4,9 @@ class Admin::DashboardController < ApplicationController
 
   def index
     @questions = Question.all
+    @total_questions = Question.count
+    @total_fees_outstanding = Answer.total_fees_outstanding
+    @total_fees_paid = Answer.total_fees_paid
   end
 end
 

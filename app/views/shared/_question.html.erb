@@ -1,4 +1,4 @@
-<div id="<%= dom_id question %>" class="card bg-base-100 shadow-sm">
+<div id="<%= dom_id question %>" class="card bg-base-100 shadow-sm mt-5">
   <div class="card-body">
     <h2 class="card-title">
       <%= question.title %>
@@ -10,12 +10,11 @@
     <% end %>
 
     <p><%= question.body %></p>
-    <div class="card-actions justify-end">
-      <%if question.answered? %>
-        <%= link_to question_path(question) do %>
-          <button class="btn btn-warning">Read Answer</button>
-        <% end %>
-      <% end %>
-    </div>
+    <% if Current.user.user? %>
+      <%= render partial: 'shared/user_buttons', locals: { question: question } %>
+    <% end %>
+    <% if Current.user.lawyer? %>
+      <%= render partial: 'shared/lawyer_buttons', locals: { question: question } %>
+    <% end %>
   </div>
 </div>

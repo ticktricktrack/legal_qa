@@ -1,0 +1,29 @@
+<%= form_with(model: answer) do |form| %>
+  <% if answer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% answer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box border p-4 w-3xl">
+    <legend class="fieldset-legend">Fee</legend>
+    <%= form.number_field :fee, class: "input", in: 10.0..1000.0, step: 1  %>
+    <p class="label">Required</p>
+
+    <legend class="fieldset-legend">Answer</legend>
+    <%= form.text_area :body, placeholder: "Answer", class: "textarea h-48" %>
+    <p class="label">Required</p>
+
+    <%= form.hidden_field :question_id, value: answer.question_id %>
+
+    <div>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>

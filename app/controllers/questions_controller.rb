@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
   end
 
   def new
-
     @question = Current.user.questions.new
   end
 
@@ -37,6 +36,12 @@ class QuestionsController < ApplicationController
         format.html { render :edit }
       end
     end
+  end
+
+  def pay_fee
+    set_question
+    @question.update!(status: 'closed')
+    redirect_to questions_url
   end
 
   private

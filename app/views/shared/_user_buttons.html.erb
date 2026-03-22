@@ -1,0 +1,13 @@
+<div class="card-actions justify-end">
+  <%if question.closed? %>
+    <%= link_to question_path(question) do %>
+      <button class="btn btn-success">Read Answer</button>
+    <% end %>
+  <% end %>
+
+  <%if question.answered? %>
+    <%= link_to pay_fee_question_path(question) do %>
+      <button class="btn btn-warning">Pay fee: <%= question.answer.fee %></button>
+    <% end %>
+  <% end %>
+</div>

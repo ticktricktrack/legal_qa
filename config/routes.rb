@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  resources :questions, only: [:index, :show]
+  resources :questions, only: [:index, :show] do
+    get "pay_fee", on: :member
+  end
 
   namespace :admin do
     get 'dashboard', to: "dashboard#index"

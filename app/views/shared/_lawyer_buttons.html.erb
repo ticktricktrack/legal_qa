@@ -1,0 +1,7 @@
+<div class="card-actions justify-end">
+  <%if question.open? %>
+    <%= link_to new_answer_path(question_id: question.id) do %>
+      <button class="btn btn-success">Write Answer</button>
+    <% end %>
+  <% end %>
+</div>

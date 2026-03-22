@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <fieldset class="fieldset">
+  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box border p-4 w-3xl">
     <legend class="fieldset-legend">What's your question?</legend>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "input" %>
     <p class="label">Required</p>
-  </fieldset>
 
-  <fieldset class="fieldset">
     <legend class="fieldset-legend">Please describe the issue in detail</legend>
-    <%= form.text_area :body, placeholder: "Description" %>
+    <%= form.text_area :body, placeholder: "Description", class: "textarea" %>
     <p class="label">Required</p>
-  </fieldset>
 
-  <div>
-    <%= form.submit class: "btn btn-primary" %>
-  </div>
+    <div>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </fieldset>
 <% end %>
