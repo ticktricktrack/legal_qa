@@ -1,0 +1,13 @@
+<h1>Questions<h1>
+
+<% @questions.each do |question| %>
+  <div class="card bg-base-100 w-96 shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title">
+        <%= question.title %>
+        <div class="badge badge-secondary"><%= question.status %></div>
+      </h2>
+      <p><%= question.body %></p>
+    </div>
+  </div>
+<% end %>
