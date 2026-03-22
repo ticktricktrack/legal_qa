@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  layout 'user'
+
   def index
     @questions = Current.user.questions
   end
@@ -24,7 +26,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(question)}", partial: "question", locals: { question: @question }) }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("#{helpers.dom_id(question)}", partial: "shared/question", locals: { question: @question }) }
         format.html { redirect_to root_path}
       else
         format.html { render :edit }

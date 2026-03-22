@@ -13,6 +13,6 @@
 
   <%= turbo_stream_from "questions" %>
   <div id="questions-list">
-    <%= render @questions %>
+    <%= render collection: @questions, partial: "shared/question" %>
   </div>
 </div>

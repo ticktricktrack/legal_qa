@@ -1,5 +1,5 @@
 <%= turbo_stream.append "questions-list" do %>
-  <%= render "question", question: @question %>
+  <%= render "shared/question", question: @question %>
 <% end %>
 
 <%= turbo_stream.replace "#{dom_id(Question.new)}_form" do %>
