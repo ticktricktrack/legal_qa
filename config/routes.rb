@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answers
   resources :questions
   resource :session
   resources :passwords, param: :token
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+
+  resources :questions, only: [:index, :show]
 
   namespace :admin do
     get 'dashboard', to: "dashboard#index"

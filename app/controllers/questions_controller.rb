@@ -6,7 +6,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
+
     @question = Current.user.questions.new
+  end
+
+  def show
+    set_question
   end
 
   def create

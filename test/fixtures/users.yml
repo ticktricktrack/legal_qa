@@ -10,7 +10,7 @@ user2:
   password_digest: <%= password_digest %>
   role: user
 
-lawyer:
+lawyer1:
   email_address: lawyer1@example.com
   password_digest: <%= password_digest %>
   role: lawyer

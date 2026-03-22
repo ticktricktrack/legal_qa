@@ -1,0 +1,11 @@
+<div class="container flex-col">
+  <div class="breadcrumbs text-sm">
+    <ul>
+      <li><%= link_to "Questions", questions_path %></li>
+      <li><%= @question.title %></li>
+    </ul>
+  </div>
+
+  <%= render partial: 'shared/question', locals: { question: @question} %>
+  <%= render partial: 'answer', locals: { answer: @question.answer } %>
+</div>
