@@ -1,5 +1,6 @@
 class Admin::DashboardController < ApplicationController
   before_action :only_allow_admins
+  layout 'admin'
 
   def index
     @questions = Question.all
