@@ -2,7 +2,9 @@
 
 ### Dependencies
 
-```shell rv rub ruby install 4.0.2
+(had to downgrade from 4.0.2 for fly.io) - also Fly seems to have some bigger issues, it's technically running, but in the US and they have an outtage warning. Hope their service recovers, otherwise I'll try on netlify.
+
+```shell rv rub ruby install 3.4.7
 ```
  or any other ruby installer, should work with 3.4.x just fine but I haven't tested it
 
