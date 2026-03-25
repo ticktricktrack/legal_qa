@@ -22,6 +22,10 @@ Run the server with
 bin/dev
 ```
 
+visit `/sessions/new` for for a new login, signout is not working
+
+I recommend opening up a private window with lawyer login to see the turbo updates in action
+
 ### other dependencies and uses
 
 - Tailwind v4 for styling
@@ -38,5 +42,6 @@ bin/dev
 - [x] Admin dashboard with a list of all questions, counts and summing up fees paid and fees outstanding
 - [x] Formatting - As much was easy with DaisyUI. When I ran into a block I moved on quickly to prioritize larger open tasks
 - [x] Basic integration testing. I've added a few browser tests, with more time a bunch of test would be next before the feature scope grows
-- [x] Fly.io hosting
+- [failed] Fly.io hosting
+- [x] Render.com hosting: [https://legal-qa-28oe.onrender.com/session/new](https://legal-qa-28oe.onrender.com/session/new)
 - [ ] email notification
